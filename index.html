@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manga reader</title>
+	<link href="style.css" rel="stylesheet" />
+</head>
+
+<body style="background-color:rgb(248, 242, 236);">
+
+	<div class="slideshow-container">
+
+		<!-- Full-width images with number and caption text -->
+		<div class="mySlides fade">
+		  <center><img src="page01.png" alt="pagina 1" class="imagem"></center>
+		</div>
+	  
+		<div class="mySlides fade">
+		  <center> <img src="page02_03.png" alt="pagina 3" class="imagem"></center>
+		</div>
+	  
+		<div class="mySlides fade">
+		  <center> <img src="page04_05.png" alt="pagina 5" class="imagem"></center>
+		</div>
+
+		<div class="mySlides fade">
+			<center> <img src="page06_07.png" alt="pagina 7" class="imagem"></center>
+		</div>
+
+		<div class="mySlides fade">
+			<center> <img src="page08_09.png" alt="pagina 9" class="imagem"></center>
+		</div>
+
+		<div class="mySlides fade">
+			<center> <img src="page10_11.png" alt="pagina 11" class="imagem"></center>
+		</div>
+
+		<div class="mySlides fade">
+			<center> <img src="page12_13.png" alt="pagina 13" class="imagem"></center>
+		</div>
+
+		<div class="mySlides fade">
+			<center> <img src="page14_15.png" alt="pagina 15" class="imagem"></center>
+		</div>
+
+
+		<!-- Next and previous buttons -->
+		<a class="prev" onclick="plusSlides(1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(-1)">&#10095;</a>
+	</div>
+	
+	
+	
+	
+	<script>
+	  	let slideIndex = 1;
+		showSlides(slideIndex);
+		
+		// Next/previous controls
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		
+		function showSlides(n) {
+		  let i;
+		  let slides = document.getElementsByClassName("mySlides");
+		  
+		  if (n > slides.length) {slideIndex = slides.length}
+		  if (n < 1) {slideIndex = 1}
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		  }
+		  
+		  slides[slideIndex-1].style.display = "block";
+		  
+		}
+
+		document.addEventListener('keydown', function(event) {
+    		if(event.keyCode == 37 || event.keyCode == 65) {
+        		slideIndex += 1;
+				showSlides(slideIndex);
+    		}
+			else if(event.keyCode == 39 || event.keyCode == 68) {
+				slideIndex -= 1;
+				showSlides(slideIndex);
+			}
+		});
+	</script>
+
+
+
+	
+
+	
+
+</body>
+
+</html>
